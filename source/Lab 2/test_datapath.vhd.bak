@@ -1,0 +1,156 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+entity test_datapath is end;
+
+architecture dut of test_datapath is
+	
+	CONSTANT half_period : time := 10 ps;
+	CONSTANT M : integer := 6;
+	CONSTANT N : integer := 6;
+	
+	COMPONENT datapath IS
+		GENERIC(
+			N 	: INTEGER := 8;
+			M 	: INTEGER := 6);
+		PORT(
+			input 	: IN STD_LOGIC_VECTOR(N-1 downto 0);
+			IE			: IN STD_LOGIC;
+			OE 		: IN STD_LOGIC;
+			
+			clk		: IN STD_LOGIC;
+			WWrite	: IN STD_LOGIC;
+			WAddr 	: IN STD_LOGIC_VECTOR(M - 1 DOWNTO 0);
+			reset		: IN STD_LOGIC;
+			RA			: IN STD_LOGIC_VECTOR(M - 1 DOWNTO 0);
+			readA 	: IN STD_LOGIC;
+			RB 		: IN STD_LOGIC_VECTOR(M - 1 DOWNTO 0);
+			readB 	: IN STD_LOGIC;
+			
+			OP			: IN  STD_LOGIC_VECTOR(2 downto 0);
+			
+			output	: OUT STD_LOGIC_VECTOR(N-1 downto 0);
+			Z_flag,N_flag,O_flag : OUT STD_LOGIC);
+	END COMPONENT;
+
+	signal clk, simulando, IE, OE, WWrite, reset, readA, readB, Z_flag,N_flag,O_flag : STD_LOGIC := '0';
+	signal WAddr, RA, RB : STD_LOGIC_VECTOR(M-1 downto 0) := (OTHERS => '0');
+	signal OP : STD_LOGIC_VECTOR(2 downto 0) := "000";
+	signal input, output  : STD_LOGIC_VECTOR(N-1 downto 0) := (OTHERS => '0');
+
+BEGIN
+	
+	clk <= (simulando and not clk) after half_period;
+	
+	DUT: datapath generic map (N, M) port map (input, IE, OE, clk, WWrite, WAddr, reset, RA, readA, RB, readB, OP, output, Z_flag, N_flag, O_flag);
+	
+	st: process is
+	variable A, B, AUX, valOP : INTEGER := 0;
+	variable Abin, Bbin, AUXbin : STD_LOGIC_VECTOR(N-1 downto 0) := (OTHERS => '0');
+		
+	
+	BEGIN
+		assert false report "BOT" severity note;
+		simulando <= '1';									--inicio do teste
+		
+		-- RESET
+		reset <= '1';
+		wait until rising_edge(clk);
+		wait until falling_edge(clk);
+		reset <= '0';
+		
+		A := 1;
+		B := 2;
+		
+		Abin := std_logic_vector(to_signed(A,N));
+		Bbin := std_logic_vector(to_signed(B,N));
+		
+		input <= Abin;
+		IE <= '1';
+		WWrite <= '1';
+		WAddr <= std_logic_vector(to_unsigned(0,M));
+		
+		wait until rising_edge(clk);
+		wait until falling_edge(clk);
+		
+	-- Teste no input e armazenamento
+		RA <= std_logic_vector(to_unsigned(0,M));
+		readA <= '1';
+		OP <= "110";
+		Abin := std_logic_vector(to_signed(A,N));
+		
+		wait until rising_edge(clk);
+		assert Abin = output report "Erro no Input" severity failure;
+		
+		wait until falling_edge(clk);
+		
+		input <= Bbin;
+		IE <= '1';
+		WWrite <= '1';
+		WAddr <= std_logic_vector(to_unsigned(1,M));
+		
+		wait until rising_edge(clk);
+		wait until falling_edge(clk);
+		
+		-- Testes de realimentações IE=0
+		FOR I IN 0 TO N-3 LOOP
+			wait until falling_edge(clk);
+			
+			RA <= std_logic_vector(to_unsigned(I,M));
+			RB <= std_logic_vector(to_unsigned(I+1,M));
+			
+			readA <= '1';
+			readB <= '1';
+			
+			IE <= '0';
+			OE <= '1';
+			
+			WAddr <= std_logic_vector(to_unsigned(I+2,M));
+			
+			valOP := I mod 8;
+			OP <= std_logic_vector(to_unsigned(valOP,3));
+			
+			Abin := std_logic_vector(to_signed(A,N));
+			Bbin := std_logic_vector(to_signed(B,N));
+			
+			wait until rising_edge(clk);
+			IF (valOP = 0) THEN
+				AUX := A+B;
+				AUXbin := std_logic_vector(to_signed(AUX,N));
+			ELSIF (valOP = 1) THEN
+				AUX := A-B;
+				AUXbin := std_logic_vector(to_signed(AUX,N));
+			ELSIF (valOP = 2) THEN
+				AUXbin := Abin AND Bbin;
+			ELSIF (valOP = 3) THEN
+				AUXbin := Abin OR Bbin;
+			ELSIF (valOP = 4) THEN
+				AUXbin := Abin XOR Bbin;
+			ELSIF (valOP = 5) THEN
+				AUXbin := NOT Abin;
+			ELSIF (valOP = 6) THEN
+				AUXbin := Abin;
+			ELSE
+				AUX := 0;
+				AUXbin := std_logic_vector(to_signed(AUX,N));
+			END IF;
+			assert AUXbin = output report "Erro GERAL" severity failure;
+			
+			wait until falling_edge(clk);
+			
+			OE <= '0';
+			AUXbin := (OTHERS => 'Z');
+			
+			wait until rising_edge(clk);
+			assert AUXbin = output report "Erro GERAL" severity failure;
+		
+		END LOOP;
+		
+		
+		assert false report "EOT" severity note;
+		simulando <= '0';									--fim do teste
+		wait;
+	END process;
+END DUT;

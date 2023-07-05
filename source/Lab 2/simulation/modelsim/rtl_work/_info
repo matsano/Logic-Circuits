@@ -1,0 +1,254 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/simulation/modelsim
+Edatapath
+Z1 w1618866513
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/datapath.vhd
+Z6 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/datapath.vhd
+l0
+L5
+VU3Q:KGkAJh6mKL4bUVBfP2
+!s100 05Um:2lcH<KgCdmjWFPGh2
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1618873398
+!i10b 1
+Z9 !s108 1618873398.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/datapath.vhd|
+Z11 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/datapath.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Alogic
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 U3Q:KGkAJh6mKL4bUVBfP2
+l62
+L30
+VBH;5<^JKlBYlm>TU9>PAA0
+!s100 HoAJW?Y7W6YHOEG]^UUi13
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efull_adder
+Z14 w1616807347
+R3
+R4
+R0
+Z15 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/full_adder.vhd
+Z16 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/full_adder.vhd
+l0
+L4
+VIXmW`G5Ve@R5KkEZaff]k1
+!s100 G<DMWn=kiXWR][abcc2Cj1
+R7
+31
+Z17 !s110 1618873400
+!i10b 1
+Z18 !s108 1618873400.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/full_adder.vhd|
+Z20 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/full_adder.vhd|
+!i113 1
+R12
+R13
+Alogicfunc
+R3
+R4
+DEx4 work 10 full_adder 0 22 IXmW`G5Ve@R5KkEZaff]k1
+l10
+L9
+VCAe7C6L?H40L?JH3_^9N92
+!s100 O5mkS@7O8SJ2C1BIZ3UNY3
+R7
+31
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Elab1_ula
+Z21 w1617283123
+R2
+R3
+R4
+R0
+Z22 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/lab1_ula.vhd
+Z23 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/lab1_ula.vhd
+l0
+L5
+VI>M8hScS]ZI2<<2@iOKih0
+!s100 :;Rm1RB;J3VRlD`bA>LME0
+R7
+31
+Z24 !s110 1618873399
+!i10b 1
+R9
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/lab1_ula.vhd|
+Z26 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/lab1_ula.vhd|
+!i113 1
+R12
+R13
+Astructural
+R2
+R3
+R4
+DEx4 work 8 lab1_ula 0 22 I>M8hScS]ZI2<<2@iOKih0
+l29
+L13
+VZ?03lW=bN?IJ3lh59:@ab1
+!s100 2]2<;Sl3QHG:PfB<GBmkA1
+R7
+31
+R24
+!i10b 1
+R9
+R25
+R26
+!i113 1
+R12
+R13
+Ememoria
+Z27 w1618864556
+R2
+R3
+R4
+R0
+Z28 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/memoria.vhd
+Z29 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/memoria.vhd
+l0
+L5
+VL:=5_^ECY74HK=Ccmk^6d0
+!s100 <FDLnNeDFb[W[A[_4M6HD2
+R7
+31
+Z30 !s110 1618873397
+!i10b 1
+Z31 !s108 1618873397.000000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/memoria.vhd|
+Z33 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/memoria.vhd|
+!i113 1
+R12
+R13
+Alogic
+R2
+R3
+R4
+DEx4 work 7 memoria 0 22 L:=5_^ECY74HK=Ccmk^6d0
+l31
+L23
+VlnNVo]n0X[Zc1[6I]LEj_1
+!s100 Z40kON03=9S5JaMXDmCVd3
+R7
+31
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R12
+R13
+Eripple_carry_adder_structural
+R14
+R3
+R4
+R0
+Z34 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/ripple_carry_adder_structural.vhd
+Z35 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/ripple_carry_adder_structural.vhd
+l0
+L4
+VTL`R]2]kBL_1`@0N3]B@=0
+!s100 XkW_30EWglHSF2[WhD6Kn2
+R7
+31
+R24
+!i10b 1
+Z36 !s108 1618873399.000000
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/ripple_carry_adder_structural.vhd|
+Z38 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/ripple_carry_adder_structural.vhd|
+!i113 1
+R12
+R13
+Astructural
+R3
+R4
+DEx4 work 29 ripple_carry_adder_structural 0 22 TL`R]2]kBL_1`@0N3]B@=0
+l21
+L12
+V;`4nN4<iFaHH=O^dPI>Ql2
+!s100 WU3OzQLNo9DN2WLk36=C43
+R7
+31
+R24
+!i10b 1
+R36
+R37
+R38
+!i113 1
+R12
+R13
+Etest_datapath
+Z39 w1618873272
+Z40 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R2
+R3
+R4
+R0
+Z41 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/test_datapath.vhd
+Z42 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/test_datapath.vhd
+l0
+L6
+V`3L]Y_8SE57Z9iUI^<53Y1
+!s100 X[k]6I2kQQV9J42SL2On92
+R7
+31
+Z43 !s110 1618873401
+!i10b 1
+R18
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/test_datapath.vhd|
+Z45 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/Laboratorio02/test_datapath.vhd|
+!i113 1
+R12
+R13
+Adut
+R40
+R2
+R3
+R4
+DEx4 work 13 test_datapath 0 22 `3L]Y_8SE57Z9iUI^<53Y1
+l43
+L8
+VbeEj0zG8F?VH7[IebK@EI0
+!s100 [Li99=NhL8F5BAeNBIf3G1
+R7
+31
+R43
+!i10b 1
+R18
+R44
+R45
+!i113 1
+R12
+R13

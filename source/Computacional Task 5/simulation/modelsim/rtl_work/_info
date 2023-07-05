@@ -1,0 +1,205 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional5/simulation/modelsim
+Emult2
+Z1 w1610634873
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional5/processador.vhd
+Z5 FC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional5/processador.vhd
+l0
+L304
+VY6Q@C=3I4ghfzYjXe1N?93
+!s100 BNLk:Cc4o>UA4O28;<ML?3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1610634925
+!i10b 1
+Z8 !s108 1610634925.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional5/processador.vhd|
+Z10 !s107 C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional5/processador.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 5 mult2 0 22 Y6Q@C=3I4ghfzYjXe1N?93
+l311
+L310
+VMAngLKo^7zEaKm7if5;G40
+!s100 9ZhPS_KI:Jm>Ec=V=TSmi0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emult6
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L275
+VDZ`M=:k0NPGc`J_5209MZ0
+!s100 MThZnIk]`S66eR@nfjhDV3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 5 mult6 0 22 DZ`M=:k0NPGc`J_5209MZ0
+l282
+L281
+ViPW74@JVLCGf`TeKcd9OP0
+!s100 FVjb2S;bc`ezR7S58nAha3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eprocessador
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L4
+VYeGbfBlim2n0VAKF48@?C1
+!s100 NUVFR^_N56=U@F_=zTI?H3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehaviour
+R2
+R3
+DEx4 work 11 processador 0 22 YeGbfBlim2n0VAKF48@?C1
+l46
+L10
+VKB5@6gQRMVF4I`knZd]bF1
+!s100 AzIdjI8SMFTmj=4PiNGP>3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eregistrador1bit
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L230
+V5]=;I:0AP8=MO0=gTYnBP3
+!s100 mVJ97FIVdooz3;AL=1Yl41
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 15 registrador1bit 0 22 5]=;I:0AP8=MO0=gTYnBP3
+l236
+L235
+Vz_U@QE6ef_zlE0OcmhVMg2
+!s100 GaHTLW0nE2MV8e_o2f_aE1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eregistrador6bits
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L252
+VzVcZfA0fW=Wm;HO5U>Tk52
+!s100 K?Fh<XBk5hc9N7`hoK@`_2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 16 registrador6bits 0 22 zVcZfA0fW=Wm;HO5U>Tk52
+l259
+L258
+VJgzea5kJ2TH]X@e=OM?gS2
+!s100 >AFP=078cfm?GT:gAn>3Q1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12

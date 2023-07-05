@@ -1,0 +1,144 @@
+|processador
+clk => registrador6bits:IR.Clk
+clk => registrador1bit:R0.Clk
+clk => registrador1bit:R1.Clk
+clk => registrador1bit:R2.Clk
+clk => registrador1bit:R3.Clk
+clk => registrador1bit:A.Clk
+clk => registrador1bit:G.Clk
+clk => estado_atual~1.DATAIN
+run => estado_futuro.T1.DATAB
+run => Selector0.IN1
+reset => registrador6bits:IR.Rst
+reset => registrador1bit:R0.Rst
+reset => registrador1bit:R1.Rst
+reset => registrador1bit:R2.Rst
+reset => registrador1bit:R3.Rst
+reset => registrador1bit:A.Rst
+reset => registrador1bit:G.Rst
+reset => estado_atual~3.DATAIN
+Din[0] => registrador6bits:IR.D[0]
+Din[1] => registrador6bits:IR.D[1]
+Din[2] => registrador6bits:IR.D[2]
+Din[3] => registrador6bits:IR.D[3]
+Din[4] => registrador6bits:IR.D[4]
+Din[5] => registrador6bits:IR.D[5]
+Done << Selector8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador6bits:IR
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Clk => Q[4]~reg0.CLK
+Clk => Q[5]~reg0.CLK
+Rst => Q[0]~reg0.ACLR
+Rst => Q[1]~reg0.ACLR
+Rst => Q[2]~reg0.ACLR
+Rst => Q[3]~reg0.ACLR
+Rst => Q[4]~reg0.ACLR
+Rst => Q[5]~reg0.ACLR
+enable => Q[5]~reg0.ENA
+enable => Q[4]~reg0.ENA
+enable => Q[3]~reg0.ENA
+enable => Q[2]~reg0.ENA
+enable => Q[1]~reg0.ENA
+enable => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:R0
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:R1
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:R2
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:R3
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:A
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|registrador1bit:G
+Clk => Q~reg0.CLK
+Rst => Q~reg0.ACLR
+D => Q~reg0.DATAIN
+enable => Q~reg0.ENA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|mult6:multiplex
+sel[0] => Equal0.IN2
+sel[0] => Equal1.IN2
+sel[0] => Equal2.IN1
+sel[0] => Equal3.IN2
+sel[0] => Equal4.IN1
+sel[0] => Equal5.IN2
+sel[1] => Equal0.IN1
+sel[1] => Equal1.IN1
+sel[1] => Equal2.IN2
+sel[1] => Equal3.IN1
+sel[1] => Equal4.IN0
+sel[1] => Equal5.IN0
+sel[2] => Equal0.IN0
+sel[2] => Equal1.IN0
+sel[2] => Equal2.IN0
+sel[2] => Equal3.IN0
+sel[2] => Equal4.IN2
+sel[2] => Equal5.IN1
+entradas[0] => saida.DATAB
+entradas[1] => saida.DATAB
+entradas[2] => saida.DATAB
+entradas[3] => saida.DATAB
+entradas[4] => saida.DATAB
+entradas[5] => saida.DATAA
+saida <= saida$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processador|mult2:mult
+sel => saida.OUTPUTSELECT
+entradas[0] => saida.DATAB
+entradas[1] => saida.DATAA
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+

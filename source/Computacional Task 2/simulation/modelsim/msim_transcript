@@ -1,0 +1,126 @@
+# Reading D:/modelsim_ase/tcl/vsim/pref.tcl
+# do LS74138_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional2/LS74138.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:25:41 on Nov 08,2020
+# vcom -reportprogress 300 -93 -work work C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional2/LS74138.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity LS74138
+# -- Compiling architecture functional of LS74138
+# End time: 21:25:41 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.ls74138
+# vsim work.ls74138 
+# Start time: 21:26:40 on Nov 08,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.ls74138(functional)
+add wave  \
+sim:/ls74138/A \
+sim:/ls74138/E \
+sim:/ls74138/O
+force E 000; force A 000; run 100
+force E 000; force A 001; run 100
+force E 000; force A 010; run 100
+force E 000; force A 100; run 100
+force E 000; force A 011; run 100
+force E 000; force A 101; run 100
+force E 000; force A 110; run 100
+force E 000; force A 111; run 100
+force E 001; force A 000; run 100
+force E 001; force A 001; run 100
+force E 001; force A 010; run 100
+force E 001; force A 100; run 100
+force E 001; force A 011; run 100
+force E 001; force A 101; run 100
+force E 001; force A 110; run 100
+force E 001; force A 111; run 100
+force E 010; force A 000; run 100
+force E 010; force A 001; run 100
+force E 010; force A 010; run 100
+force E 010; force A 100; run 100
+force E 010; force A 011; run 100
+force E 010; force A 101; run 100
+force E 010; force A 110; run 100
+force E 010; force A 111; run 100
+force E 100; force A 000; run 100
+force E 100; force A 001; run 100
+force E 100; force A 010; run 100
+force E 100; force A 011; run 100
+force E 100; force A 100; run 100
+force E 100; force A 101; run 100
+force E 100; force A 110; run 100
+force E 100; force A 111; run 100
+force E 011; force A 000; run 100
+force E 011; force A 001; run 100
+force E 011; force A 010; run 100
+force E 011; force A 100; run 100
+force E 011; force A 011; run 100
+force E 011; force A 101; run 100
+force E 011; force A 110; run 100
+force E 011; force A 111; run 100
+force E 101; force A 000; run 100
+force E 101; force A 001; run 100
+force E 101; force A 010; run 100
+force E 101; force A 100; run 100
+force E 101; force A 011; run 100
+force E 101; force A 101; run 100
+force E 101; force A 110; run 100
+force E 101; force A 111; run 100
+force E 110; force A 000; run 100
+force E 110; force A 001; run 100
+force E 110; force A 010; run 100
+force E 110; force A 100; run 100
+force E 110; force A 011; run 100
+force E 110; force A 101; run 100
+force E 110; force A 110; run 100
+force E 110; force A 111; run 100
+force E 111; force A 000; run 100
+force E 111; force A 001; run 100
+force E 111; force A 010; run 100
+force E 111; force A 100; run 100
+force E 111; force A 011; run 100
+force E 111; force A 101; run 100
+force E 111; force A 110; run 100
+force E 111; force A 111; run 100
+restart
+force E 010; force A 000; run 100
+force E 010; force A 001; run 100
+force E 010; force A 010; run 100
+force E 010; force A 100; run 100
+force E 010; force A 011; run 100
+force E 010; force A 101; run 100
+force E 010; force A 110; run 100
+force E 010; force A 111; run 100
+force E 100; force A 000; run 100
+force E 100; force A 001; run 100
+force E 100; force A 010; run 100
+force E 100; force A 011; run 100
+force E 100; force A 100; run 100
+force E 100; force A 101; run 100
+force E 100; force A 110; run 100
+force E 100; force A 111; run 100
+force E 011; force A 000; run 100
+force E 011; force A 001; run 100
+force E 011; force A 010; run 100
+force E 011; force A 100; run 100
+force E 011; force A 011; run 100
+force E 011; force A 101; run 100
+force E 011; force A 110; run 100
+force E 011; force A 111; run 100
+# End time: 21:33:22 on Nov 08,2020, Elapsed time: 0:06:42
+# Errors: 0, Warnings: 0

@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Apr 19 17:41:57 2021
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : memoria
+Top-level Entity Name : memoria
+Family : MAX V
+Device : 5M2210ZF256C4
+Timing Models : Final
+Total logic elements : 760 / 2,210 ( 34 % )
+Total pins : 47 / 203 ( 23 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

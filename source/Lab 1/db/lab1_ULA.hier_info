@@ -1,0 +1,234 @@
+|lab1_ULA
+OP[0] => O_flag.IN1
+OP[0] => Equal0.IN2
+OP[0] => Equal1.IN0
+OP[0] => Equal2.IN2
+OP[0] => Equal3.IN1
+OP[0] => Equal4.IN2
+OP[0] => Equal5.IN1
+OP[0] => Equal6.IN2
+OP[0] => Equal7.IN2
+OP[0] => O_flag.IN1
+OP[1] => Equal0.IN1
+OP[1] => Equal1.IN2
+OP[1] => Equal2.IN0
+OP[1] => Equal3.IN0
+OP[1] => Equal4.IN1
+OP[1] => Equal5.IN2
+OP[1] => Equal6.IN1
+OP[1] => Equal7.IN1
+OP[1] => O_flag.IN0
+OP[2] => Equal0.IN0
+OP[2] => Equal1.IN1
+OP[2] => Equal2.IN1
+OP[2] => Equal3.IN2
+OP[2] => Equal4.IN0
+OP[2] => Equal5.IN0
+OP[2] => Equal6.IN0
+OP[2] => Equal7.IN0
+OP[2] => O_flag.IN1
+A[0] => AandB[0].IN0
+A[0] => AorB[0].IN0
+A[0] => AxorB[0].IN0
+A[0] => InterY.DATAB
+A[0] => ripple_carry_adder_structural:ADD0.A[0]
+A[0] => InterY.DATAB
+A[1] => AandB[1].IN0
+A[1] => AorB[1].IN0
+A[1] => AxorB[1].IN0
+A[1] => InterY.DATAB
+A[1] => ripple_carry_adder_structural:ADD0.A[1]
+A[1] => InterY.DATAB
+A[2] => AandB[2].IN0
+A[2] => AorB[2].IN0
+A[2] => AxorB[2].IN0
+A[2] => InterY.DATAB
+A[2] => ripple_carry_adder_structural:ADD0.A[2]
+A[2] => InterY.DATAB
+A[3] => AandB[3].IN0
+A[3] => AorB[3].IN0
+A[3] => AxorB[3].IN0
+A[3] => InterY.DATAB
+A[3] => O_flag.IN0
+A[3] => ripple_carry_adder_structural:ADD0.A[3]
+A[3] => InterY.DATAB
+A[3] => O_flag.IN0
+A[3] => O_flag.IN0
+B[0] => ADDB[0].DATAB
+B[0] => AandB[0].IN1
+B[0] => AorB[0].IN1
+B[0] => AxorB[0].IN1
+B[0] => ripple_carry_adder_structural:ADD1.A[0]
+B[1] => ADDB[1].DATAB
+B[1] => AandB[1].IN1
+B[1] => AorB[1].IN1
+B[1] => AxorB[1].IN1
+B[1] => ripple_carry_adder_structural:ADD1.A[1]
+B[2] => ADDB[2].DATAB
+B[2] => AandB[2].IN1
+B[2] => AorB[2].IN1
+B[2] => AxorB[2].IN1
+B[2] => ripple_carry_adder_structural:ADD1.A[2]
+B[3] => ADDB[3].DATAB
+B[3] => AandB[3].IN1
+B[3] => AorB[3].IN1
+B[3] => AxorB[3].IN1
+B[3] => O_flag.IN1
+B[3] => ripple_carry_adder_structural:ADD1.A[3]
+B[3] => O_flag.IN1
+B[3] => O_flag.IN1
+Y[0] << InterY.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] << InterY.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] << InterY.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] << InterY.DB_MAX_OUTPUT_PORT_TYPE
+Z_flag << Equal8.DB_MAX_OUTPUT_PORT_TYPE
+N_flag << InterY.DB_MAX_OUTPUT_PORT_TYPE
+O_flag << O_flag.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD0
+A[0] => full_adder:ADD0.x
+A[1] => full_adder:GEN_REG:1:ADDX.x
+A[2] => full_adder:GEN_REG:2:ADDX.x
+A[3] => full_adder:GEN_REG:3:ADDX.x
+B[0] => full_adder:ADD0.y
+B[1] => full_adder:GEN_REG:1:ADDX.y
+B[2] => full_adder:GEN_REG:2:ADDX.y
+B[3] => full_adder:GEN_REG:3:ADDX.y
+Cin => full_adder:ADD0.Cin
+Soma[0] <= full_adder:ADD0.s
+Soma[1] <= full_adder:GEN_REG:1:ADDX.s
+Soma[2] <= full_adder:GEN_REG:2:ADDX.s
+Soma[3] <= full_adder:GEN_REG:3:ADDX.s
+Cout <= full_adder:GEN_REG:3:ADDX.Cout
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD0|full_adder:ADD0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD0|full_adder:\GEN_REG:1:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD0|full_adder:\GEN_REG:2:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD0|full_adder:\GEN_REG:3:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD1
+A[0] => full_adder:ADD0.x
+A[1] => full_adder:GEN_REG:1:ADDX.x
+A[2] => full_adder:GEN_REG:2:ADDX.x
+A[3] => full_adder:GEN_REG:3:ADDX.x
+B[0] => full_adder:ADD0.y
+B[1] => full_adder:GEN_REG:1:ADDX.y
+B[2] => full_adder:GEN_REG:2:ADDX.y
+B[3] => full_adder:GEN_REG:3:ADDX.y
+Cin => full_adder:ADD0.Cin
+Soma[0] <= full_adder:ADD0.s
+Soma[1] <= full_adder:GEN_REG:1:ADDX.s
+Soma[2] <= full_adder:GEN_REG:2:ADDX.s
+Soma[3] <= full_adder:GEN_REG:3:ADDX.s
+Cout <= full_adder:GEN_REG:3:ADDX.Cout
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD1|full_adder:ADD0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD1|full_adder:\GEN_REG:1:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD1|full_adder:\GEN_REG:2:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab1_ULA|ripple_carry_adder_structural:ADD1|full_adder:\GEN_REG:3:ADDX
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

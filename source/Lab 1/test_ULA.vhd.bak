@@ -1,0 +1,278 @@
+library ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+entity test_ULA is end;
+
+architecture dut of test_ULA is
+
+	CONSTANT half_period : time := 10 ps;
+	CONSTANT N : integer := 6;
+
+	COMPONENT lab1_ULA IS
+		GENERIC( N  : INTEGER );
+		PORT ( OP	: IN  STD_LOGIC_VECTOR(2 downto 0);
+				 A,B  : IN  STD_LOGIC_VECTOR(N-1 downto 0);
+				 Y		: OUT STD_LOGIC_VECTOR(N-1 downto 0); 
+				 Z_flag,N_flag,O_flag : OUT STD_LOGIC);
+	END COMPONENT;
+
+	signal clk,simulando : std_logic := '0';
+	signal A,B,Y : std_logic_vector(N-1 downto 0);
+	signal OP : std_logic_vector(2 downto 0);
+	signal Z_flag,N_flag,O_flag : std_logic;
+
+BEGIN
+	clk <= (simulando and not clk) after half_period;
+
+	DUT: lab1_ULA generic map (N) port map (OP,A,B,Y,Z_flag,N_flag,O_flag);
+
+	st: process is
+	variable SUM_RTL, SUB_RTL, AND_RTL, OR_RTL, XOR_RTL, NOT_RTL, MOV_RTL, temp_sum, temp_sub, valOP, valA, valB : integer := 0;
+	
+	variable Z_RTL, N_RTL, O_RTL : std_logic := '0';
+	BEGIN
+		assert false report "BOT" severity note;  --inicio do teste
+		simulando <= '1';									-- simulação começou
+      	        wait until rising_edge(clk);
+					  
+					  
+					  
+		for K in 0 to 7 loop
+		
+			if (K /= 7) then
+		
+				for I in -2*(N-1) to 2*(N-1) - 1 loop
+				
+					if (K <= 4) then
+						for J in -2*(N-1) to 2*(N-1) - 1 loop
+							wait until falling_edge(clk);
+							
+							valOP := K;
+							valA := I;
+							valB := J;
+							
+							OP <= std_logic_vector(to_signed(valOP,3));
+							A <= std_logic_vector(to_signed(valA,N));
+							B <= std_logic_vector(to_signed(valB,N));
+							
+							if (K = 0) then
+							
+								temp_sum := valA + valB;
+								if(temp_sum >= -2*(N-1) and temp_sum <= 2*(N-1) - 1 ) then
+									SUM_RTL := temp_sum;
+									O_RTL := '0';
+								elsif(temp_sum > 0) then
+									SUM_RTL := temp_sum - 2**(N);
+									O_RTL := '1';
+								else
+									SUM_RTL := temp_sum + 2**(N);
+									O_RTL := '1';
+								end if;
+								
+								if (temp_sum = 0) then
+									Z_RTL := '1';
+								else
+									Z_RTL := '0';
+								end if;
+								
+								if (SUM_RTL < 0) then
+									N_RTL := '1';
+								else
+									N_RTL := '0';
+								end if;
+								
+								
+								wait until rising_edge(clk);
+								assert SUM_RTL = to_integer(signed(Y)) report "Erro na Operação Soma" severity failure;
+								assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Soma" severity failure;
+								assert N_RTL = N_flag report "Erro no N_flag da Operação Soma" severity failure;
+								assert O_RTL = O_flag report "Erro no O_flag da Operação Soma" severity failure;
+							
+							elsif (K=1) then
+							
+								temp_sub := valA - valB;					-- CORRIGIR
+								if(temp_sub >= -2*(N-1) and temp_sub <= 2*(N-1) - 1 ) then
+									SUB_RTL := temp_sub;
+									O_RTL := '0';
+								elsif(temp_sub > 0) then
+									SUB_RTL := temp_sub - 2**(N);
+									O_RTL := '1';
+								else
+									SUB_RTL := temp_sub + 2**(N);
+									O_RTL := '1';
+								end if;
+								
+								if (temp_sub = 0) then
+									Z_RTL := '1';
+								else
+									Z_RTL := '0';
+								end if;
+								
+								if (SUB_RTL < 0) then
+									N_RTL := '1';
+								else
+									N_RTL := '0';
+								end if;
+								
+								
+								wait until rising_edge(clk);
+								assert SUB_RTL = to_integer(signed(Y)) report "Erro na Operação Subtração" severity failure;
+								assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Subtração" severity failure;
+								assert N_RTL = N_flag report "Erro no N_flag da Operação Subtração" severity failure;
+								assert O_RTL = O_flag report "Erro no O_flag da Operação Subtração" severity failure;
+							
+							
+							elsif (K=2) then
+							
+								AND_RTL := to_integer(signed(A and B));
+								
+								if (AND_RTL = 0) then
+									Z_RTL := '1';
+								else
+									Z_RTL := '0';
+								end if;
+								
+								if (AND_RTL < 0) then
+									N_RTL := '1';
+								else
+									N_RTL := '0';
+								end if;
+								
+								O_RTL := '0';
+								
+								wait until rising_edge(clk);
+								assert AND_RTL = to_integer(signed(Y)) report "Erro na Operação And" severity failure;
+								assert Z_RTL = Z_flag report "Erro no Z_flag da Operação And" severity failure;
+								assert N_RTL = N_flag report "Erro no N_flag da Operação And" severity failure;
+								assert O_RTL = O_flag report "Erro no O_flag da Operação And" severity failure;
+							
+							
+							elsif (K=3) then
+								
+								OR_RTL := to_integer(signed(A or B));
+								
+								if (OR_RTL = 0) then
+									Z_RTL := '1';
+								else
+									Z_RTL := '0';
+								end if;
+								
+								if (OR_RTL < 0) then
+									N_RTL := '1';
+								else
+									N_RTL := '0';
+								end if;
+								
+								O_RTL := '0';
+								
+								wait until rising_edge(clk);
+								assert OR_RTL = to_integer(signed(Y)) report "Erro na Operação Or" severity failure;
+								assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Or" severity failure;
+								assert N_RTL = N_flag report "Erro no N_flag da Operação Or" severity failure;
+								assert O_RTL = O_flag report "Erro no O_flag da Operação Or" severity failure;
+								
+							
+							elsif (K=4) then
+								
+								XOR_RTL := to_integer(signed(A xor B));
+								
+								if (XOR_RTL = 0) then
+									Z_RTL := '1';
+								else
+									Z_RTL := '0';
+								end if;
+								
+								if (XOR_RTL < 0) then
+									N_RTL := '1';
+								else
+									N_RTL := '0';
+								end if;
+								
+								O_RTL := '0';
+								
+								wait until rising_edge(clk);
+								assert XOR_RTL = to_integer(signed(Y)) report "Erro na Operação Xor" severity failure;
+								assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Xor" severity failure;
+								assert N_RTL = N_flag report "Erro no N_flag da Operação Xor" severity failure;
+								assert O_RTL = O_flag report "Erro no O_flag da Operação Xor" severity failure;
+							
+							end if;
+						end loop;
+						
+					else
+						if (K = 5) then
+							
+							NOT_RTL := to_integer(signed(not A));
+								
+							if (NOT_RTL = 0) then
+								Z_RTL := '1';
+							else
+								Z_RTL := '0';
+							end if;
+							
+							if (NOT_RTL < 0) then
+								N_RTL := '1';
+							else
+								N_RTL := '0';
+							end if;
+							
+							O_RTL := '0';
+							
+							wait until rising_edge(clk);
+							assert NOT_RTL = to_integer(signed(Y)) report "Erro na Operação Not" severity failure;
+							assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Not" severity failure;
+							assert N_RTL = N_flag report "Erro no N_flag da Operação Not" severity failure;
+							assert O_RTL = O_flag report "Erro no O_flag da Operação Not" severity failure;
+							
+						else
+						
+							MOV_RTL := to_integer(signed(A));
+								
+							if (MOV_RTL = 0) then
+								Z_RTL := '1';
+							else
+								Z_RTL := '0';
+							end if;
+							
+							if (MOV_RTL < 0) then
+								N_RTL := '1';
+							else
+								N_RTL := '0';
+							end if;
+							
+							O_RTL := '0';
+							
+							wait until rising_edge(clk);
+							assert MOV_RTL = to_integer(signed(Y)) report "Erro na Operação Mov" severity failure;
+							assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Mov" severity failure;
+							assert N_RTL = N_flag report "Erro no N_flag da Operação Mov" severity failure;
+							assert O_RTL = O_flag report "Erro no O_flag da Operação Mov" severity failure;
+						
+						
+						end if;
+					end if;
+				end loop;
+						
+			else			-- K = 7
+				
+				Z_RTL := '1';
+				N_RTL := '0';
+				O_RTL := '0';
+				
+				wait until rising_edge(clk);
+				assert 0 = to_integer(signed(Y)) report "Erro na Operação Zero" severity failure;
+				assert Z_RTL = Z_flag report "Erro no Z_flag da Operação Zero" severity failure;
+				assert N_RTL = N_flag report "Erro no N_flag da Operação Zero" severity failure;
+				assert O_RTL = O_flag report "Erro no O_flag da Operação Zero" severity failure;
+					
+			end if;
+		end loop;	
+		
+		
+		assert false report "EOT" severity note; --fim do teste
+		simulando <= '0';
+		wait;
+	END process;
+END DUT;

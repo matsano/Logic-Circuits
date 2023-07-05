@@ -1,0 +1,172 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/simulation/modelsim
+Efull_adder
+Z1 w1616807347
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/full_adder.vhd
+Z5 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/full_adder.vhd
+l0
+L4
+VIXmW`G5Ve@R5KkEZaff]k1
+!s100 G<DMWn=kiXWR][abcc2Cj1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1617324029
+!i10b 1
+Z8 !s108 1617324029.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/full_adder.vhd|
+Z10 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/full_adder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Alogicfunc
+R2
+R3
+DEx4 work 10 full_adder 0 22 IXmW`G5Ve@R5KkEZaff]k1
+l10
+L9
+VCAe7C6L?H40L?JH3_^9N92
+!s100 O5mkS@7O8SJ2C1BIZ3UNY3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Elab1_ula
+Z13 w1617283123
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/lab1_ULA.vhd
+Z16 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/lab1_ULA.vhd
+l0
+L5
+VI>M8hScS]ZI2<<2@iOKih0
+!s100 :;Rm1RB;J3VRlD`bA>LME0
+R6
+31
+R7
+!i10b 1
+Z17 !s108 1617324028.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/lab1_ULA.vhd|
+Z19 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/lab1_ULA.vhd|
+!i113 1
+R11
+R12
+Astructural
+R14
+R2
+R3
+DEx4 work 8 lab1_ula 0 22 I>M8hScS]ZI2<<2@iOKih0
+l29
+L13
+VZ?03lW=bN?IJ3lh59:@ab1
+!s100 2]2<;Sl3QHG:PfB<GBmkA1
+R6
+31
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Eripple_carry_adder_structural
+R1
+R2
+R3
+R0
+Z20 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/ripple_carry_adder_structural.vhd
+Z21 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/ripple_carry_adder_structural.vhd
+l0
+L4
+VTL`R]2]kBL_1`@0N3]B@=0
+!s100 XkW_30EWglHSF2[WhD6Kn2
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/ripple_carry_adder_structural.vhd|
+Z23 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/ripple_carry_adder_structural.vhd|
+!i113 1
+R11
+R12
+Astructural
+R2
+R3
+DEx4 work 29 ripple_carry_adder_structural 0 22 TL`R]2]kBL_1`@0N3]B@=0
+l21
+L12
+V;`4nN4<iFaHH=O^dPI>Ql2
+!s100 WU3OzQLNo9DN2WLk36=C43
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Etest_ula
+Z24 w1617323874
+Z25 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R14
+R2
+R3
+R0
+Z26 8C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/test_ULA.vhd
+Z27 FC:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/test_ULA.vhd
+l0
+L8
+VdVchFYo[HiP>VR@XiXU202
+!s100 [C5@i0RY`zKRQ]5J8H;oY0
+R6
+31
+Z28 !s110 1617324030
+!i10b 1
+Z29 !s108 1617324030.000000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/test_ULA.vhd|
+Z31 !s107 C:/Users/mathe/OneDrive/Documentos/TrabCircuitosLogicos/LAB01/test_ULA.vhd|
+!i113 1
+R11
+R12
+Adut
+R25
+R14
+R2
+R3
+DEx4 work 8 test_ula 0 22 dVchFYo[HiP>VR@XiXU202
+l40
+L10
+V;MSXD]`ULUGj[]M@AiGBk0
+!s100 Ubn=@X<>^z5LPfBn_:j;_0
+R6
+31
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 1
+R11
+R12

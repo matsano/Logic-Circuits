@@ -1,0 +1,127 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/simulation/modelsim
+Ebuf
+Z1 w1606160344
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd
+Z5 FC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd
+l0
+L4
+V8iSK^aKB8cVciE4=XCJPS1
+!s100 dWZ=3=i=1hK4A`Ilg5gMC1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1606524240
+!i10b 1
+Z8 !s108 1606524240.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd|
+Z10 !s107 C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 3 buf 0 22 8iSK^aKB8cVciE4=XCJPS1
+l10
+L9
+VRXGRGk18EK56bAjA?<Jc]0
+!s100 libkWl_o;:I5`6YmkDJ]C3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Effd
+Z13 w1606163432
+R2
+R3
+R0
+Z14 8C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd
+Z15 FC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd
+l0
+L4
+VQSFUjZ`]QW5VQ=1W9A_=T2
+!s100 8hP]@n2oXDUV=fNm4NL?P3
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd|
+Z17 !s107 C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 3 ffd 0 22 QSFUjZ`]QW5VQ=1W9A_=T2
+l10
+L9
+VzSYTK7bY9jXV2WboYFMD=0
+!s100 1^aU2a9b^?]<D1XFGj7cf1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Els74595
+Z18 w1606524173
+R2
+R3
+R0
+Z19 8C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd
+Z20 FC:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd
+l0
+L4
+VCz8YB7:z@nRg6A54UNa;R3
+!s100 nBnHB5d2FK1P[C;LoNj6F2
+R6
+31
+Z21 !s110 1606524241
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd|
+Z23 !s107 C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd|
+!i113 1
+R11
+R12
+Astructure
+R2
+R3
+DEx4 work 7 ls74595 0 22 Cz8YB7:z@nRg6A54UNa;R3
+l26
+L10
+Vb0Dn8fb2]ng2<]JdR1jPG3
+!s100 ToR@V;I:VBak1j^1OSa0f0
+R6
+31
+R21
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12

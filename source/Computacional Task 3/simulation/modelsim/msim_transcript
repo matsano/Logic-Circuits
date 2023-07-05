@@ -1,0 +1,282 @@
+# Reading D:/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do LS74595_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:00 on Nov 27,2020
+# vcom -reportprogress 300 -93 -work work C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture Behavioral of FFD
+# End time: 21:44:00 on Nov 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:00 on Nov 27,2020
+# vcom -reportprogress 300 -93 -work work C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/Buf.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Buf
+# -- Compiling architecture Behavioral of Buf
+# End time: 21:44:00 on Nov 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:44:00 on Nov 27,2020
+# vcom -reportprogress 300 -93 -work work C:/Users/mathe/Documents/TrabCircuitosLogicos/ExercicioComputacional3/LS74595.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity LS74595
+# -- Compiling architecture structure of LS74595
+# End time: 21:44:01 on Nov 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.ls74595(structure)
+# vsim work.ls74595(structure) 
+# Start time: 21:44:33 on Nov 27,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.ls74595(structure)
+# Loading work.ffd(behavioral)
+# Loading work.buf(behavioral)
+add wave -position insertpoint  \
+sim:/ls74595/Gn \
+sim:/ls74595/Rck \
+sim:/ls74595/SCLRn \
+sim:/ls74595/SCK \
+sim:/ls74595/SI \
+sim:/ls74595/Q \
+sim:/ls74595/Qhp
+library IEEE;
+# bad option "IEEE": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+use IEEE.STD_LOGIC_1164.all;
+# invalid command name "use"
+
+entity LS74595 is
+# bad option "LS74595": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	port (Gn, Rck, SCLRn, SCK, SI: in std_logic;
+# invalid command name "port"
+		Q: out std_logic_vector(7 downto 0);
+# invalid command name "Q:"
+		Qhp: out std_logic);
+# invalid command name "Qhp:"
+end LS74595;
+# bad option "LS74595": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+architecture structure of LS74595 is
+# bad option "structure": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	
+	component FFD is
+# invalid command name "component"
+		port( Clk, Rst, D: in std_logic;
+# invalid command name "port("
+				Q: out std_logic);
+# invalid command name "Q:"
+	end component FFD;
+# bad option "component": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	
+	component Buf is
+# invalid command name "component"
+		port( Gn, B: in std_logic;
+# invalid command name "port("
+				Q: out std_logic);
+# invalid command name "Q:"
+	end component Buf;
+# bad option "component": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	
+	signal C: std_logic_vector(6 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+	signal B: std_logic_vector(7 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+	signal inter: std_logic;
+# expected boolean value but got "inter:"
+	
+begin
+# invalid command name "begin"
+	FA0: FFD port map (SCK, SCLRn, SI, C(0));
+# invalid command name "FA0:"
+	FA1: FFD port map (SCK, SCLRn, C(0), C(1));
+# invalid command name "FA1:"
+	FA2: FFD port map (SCK, SCLRn, C(1), C(2));
+# invalid command name "FA2:"
+	FA3: FFD port map (SCK, SCLRn, C(2), C(3));
+# invalid command name "FA3:"
+	FA4: FFD port map (SCK, SCLRn, C(3), C(4));
+# invalid command name "FA4:"
+	FA5: FFD port map (SCK, SCLRn, C(4), C(5));
+# invalid command name "FA5:"
+	FA6: FFD port map (SCK, SCLRn, C(5), C(6));
+# invalid command name "FA6:"
+	FA7: FFD port map (SCK, SCLRn, C(6), inter);
+# invalid command name "FA7:"
+	
+	FA8: FFD port map (Rck, '1', C(0), B(0));
+# invalid command name "FA8:"
+	FA9: FFD port map (Rck, '1', C(1), B(1));
+# invalid command name "FA9:"
+	FA10: FFD port map (Rck, '1', C(2), B(2));
+# invalid command name "FA10:"
+	FA11: FFD port map (Rck, '1', C(3), B(3));
+# invalid command name "FA11:"
+	FA12: FFD port map (Rck, '1', C(4), B(4));
+# invalid command name "FA12:"
+	FA13: FFD port map (Rck, '1', C(5), B(5));
+# invalid command name "FA13:"
+	FA14: FFD port map (Rck, '1', C(6), B(6));
+# invalid command name "FA14:"
+	FA15: FFD port map (Rck, '1', inter, B(7));
+# invalid command name "FA15:"
+	
+	BUF0: Buf port map (Gn, B(0), Q(0));
+# invalid command name "BUF0:"
+	BUF1: Buf port map (Gn, B(1), Q(1));
+# invalid command name "BUF1:"
+	BUF2: Buf port map (Gn, B(2), Q(2));
+# invalid command name "BUF2:"
+	BUF3: Buf port map (Gn, B(3), Q(3));
+# invalid command name "BUF3:"
+	BUF4: Buf port map (Gn, B(4), Q(4));
+# invalid command name "BUF4:"
+	BUF5: Buf port map (Gn, B(5), Q(5));
+# invalid command name "BUF5:"
+	BUF6: Buf port map (Gn, B(6), Q(6));
+# invalid command name "BUF6:"
+	BUF7: Buf port map (Gn, B(7), Q(7));
+# invalid command name "BUF7:"
+	
+	Qhp <= inter;
+# invalid command name "Qhp"
+
+end structure;
+# bad option "structure": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+architecture behaviour of LS74595 is
+# bad option "behaviour": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+
+	signal Q1: std_logic_vector(7 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+	signal Q2: std_logic_vector(7 downto 0);
+# wrong # args: should be "signals_subelement_split isvhdl selected_name ?raw_idx?"
+begin
+# invalid command name "begin"
+
+	process(SCLRn, SCK)
+# invalid command name "process(SCLRn,"
+	begin
+# invalid command name "begin"
+		if (SCLRn='0') then
+# invalid bareword "SCLRn"
+# in expression "(SCLRn='0')";
+# should be "$SCLRn" or "{SCLRn}" or "SCLRn(...)" or ...
+			Q1(0) <= '0';
+# invalid command name "Q1(0)"
+			Q1(1) <= '0';
+# invalid command name "Q1(1)"
+			Q1(2) <= '0';
+# invalid command name "Q1(2)"
+			Q1(3) <= '0';
+# invalid command name "Q1(3)"
+			Q1(4) <= '0';
+# invalid command name "Q1(4)"
+			Q1(5) <= '0';
+# invalid command name "Q1(5)"
+			Q1(6) <= '0';
+# invalid command name "Q1(6)"
+			Q1(7) <= '0';
+# invalid command name "Q1(7)"
+		else
+# invalid command name "else"
+			if (rising_edge(SCK)) then
+# invalid bareword "SCK"
+# in expression "(rising_edge(SCK))";
+# should be "$SCK" or "{SCK}" or "SCK(...)" or ...
+				Q1(0) <= SI;
+# invalid command name "Q1(0)"
+				Q1(1) <= Q1(0);
+# invalid command name "Q1(1)"
+				Q1(2) <= Q1(1);
+# invalid command name "Q1(2)"
+				Q1(3) <= Q1(2);
+# invalid command name "Q1(3)"
+				Q1(4) <= Q1(3);
+# invalid command name "Q1(4)"
+				Q1(5) <= Q1(4);
+# invalid command name "Q1(5)"
+				Q1(6) <= Q1(5);
+# invalid command name "Q1(6)"
+				Q1(7) <= Q1(6);
+# invalid command name "Q1(7)"
+			end if;
+# bad option "if": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+		end if;
+# bad option "if": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	end process;
+# bad option "process": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	
+	Qhp <= Q1(7);
+# invalid command name "Qhp"
+		
+	process(RCK)
+# invalid command name "process(RCK)"
+	begin
+# invalid command name "begin"
+		if (rising_edge(RCK)) then
+# invalid bareword "RCK"
+# in expression "(rising_edge(RCK))";
+# should be "$RCK" or "{RCK}" or "RCK(...)" or ...
+			Q2(0) <= Q1(0);
+# invalid command name "Q2(0)"
+			Q2(1) <= Q1(1);
+# invalid command name "Q2(1)"
+			Q2(2) <= Q1(2);
+# invalid command name "Q2(2)"
+			Q2(3) <= Q1(3);
+# invalid command name "Q2(3)"
+			Q2(4) <= Q1(4);
+# invalid command name "Q2(4)"
+			Q2(5) <= Q1(5);
+# invalid command name "Q2(5)"
+			Q2(6) <= Q1(6);
+# invalid command name "Q2(6)"
+			Q2(7) <= Q1(7);
+# invalid command name "Q2(7)"
+		end if;
+# bad option "if": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	end process;
+# bad option "process": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+	
+	Q <= Q2 when Gn = '0' else "ZZZZZZZZ";
+# ambiguous command name "Q": QA_CompileDlg_Close QA_CompileDlg_Compile QueueEval QueueEval2 QueueInit QuitAndRemove QuitInit
+
+end behaviour;
+# bad option "behaviour": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+force -freeze sim:/ls74595/SCK 0 0, 1 {25 ps} -r 50
+force SI 0; force SCLRn 0; force Rck 0; force Gn 0; run 50
+force SI 1; force Rck 0; force SCLRn 1; force Gn 0; run 50
+force -freeze sim:/ls74595/Rck 1 0, 0 {25 ps} -r 50
+force SI 0; force SCLRn 1; force Gn 0; run 425
+noforce sim:/ls74595/Rck
+force SI 0; force Rck 0; force SCLRn 1; force Gn 1; run 25
+force SI 1; force Rck 0; force SCLRn 1; force Gn 1; run 50
+force SI 0; force Rck 1; force SCLRn 1; force Gn 1; run 25
+force SI 0; force Rck 0; force SCLRn 1; force Gn 0; run 100
+force SI 0; force Rck 0; force SCLRn 0; force Gn 0; run 25
+force SI 0; force Rck 1; force SCLRn 0; force Gn 0; run 25
+force SI 0; force Rck 0; force SCLRn 1; force Gn 0; run 50
+# End time: 21:50:22 on Nov 27,2020, Elapsed time: 0:05:49
+# Errors: 90, Warnings: 0

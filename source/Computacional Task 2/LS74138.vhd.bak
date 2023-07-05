@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity LS74138 is
+	port(A, E: in std_logic_vector(2 downto 0);
+		  O: out std_logic_vector(7 downto 0));
+end LS74138;
+
+architecture logic of LS74138 is
+		signal notA: std_logic_vector(2 downto 0);
+		signal andE: STD_LOGIC;
+	begin
+		andE <= (not E(0)) and (not E(1)) and E(2);
+		notA <= not A;
+		
+		O(0) <= (notA(0) nand notA(1)) nand (notA(2) nand andE);
+		O(1) <= (A(0) nand notA(1)) nand (notA(2) nand andE);
+		O(2) <= (notA(0) nand A(1)) nand (notA(2) nand andE);
+		O(3) <= (A(0) nand A(1)) nand (notA(2) nand andE);
+		O(4) <= (notA(0) nand notA(1)) nand (A(2) nand andE);
+		O(5) <= (A(0) nand notA(1)) nand (A(2) nand andE);
+		O(6) <= (notA(0) nand A(1)) nand (A(2) nand andE);
+		O(7) <= (A(0) nand A(1)) nand (A(2) nand andE);		
+end logic;
