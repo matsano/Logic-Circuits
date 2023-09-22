@@ -15,4 +15,4 @@ This project was implemented in VHDL on the [Intel Quartus Prime Software](https
     - [![GitHub](https://i.stack.imgur.com/tskMh.png) GitHub](https://github.com/matsano)
 
 
-We would like to thank the professor Mr. André Ricardo Fioravanti for the knowledge taught in Logic Circuits Course and Laboratory of Logic Circuits Course at [UNICAMP](https://www.unicamp.br/unicamp/).
+I would like to thank the professor Mr. André Ricardo Fioravanti for the knowledge taught in Logic Circuits Course and Laboratory of Logic Circuits Course at [UNICAMP](https://www.unicamp.br/unicamp/).
